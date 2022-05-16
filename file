@@ -12,15 +12,3 @@ htpasswd -Bbn ${TRAEFIK_UI_USER} ${TRAEFIK_UI_PASS} \
     > ${DESTINATION_FOLDER}/htpasswd
    
 unset TRAEFIK_UI_USER TRAEFIK_UI_PASS DESTINATION_FOLDER
-
-
-
-
-
-
-
-
-
-# echo -e "192.168.59.100 traefik.frontend.minikube.local.com" | sudo tee -a /etc/hosts
-
-# traefik   LoadBalancer   10.103.238.36   <pending>     80:30371/TCP,443:30345/TCP   7d5h (Minikube ki vjh se external IP pending h thats why 503 error)
