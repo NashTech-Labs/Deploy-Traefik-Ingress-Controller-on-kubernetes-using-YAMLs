@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard
+  namespace: traefik
+spec:
+  routes:
+    - kind: Rule
+      match: traefik.frontend.minikube.local.com
+      services:
+        - name: traefik
+          kind: TraefikService
+      middlewares:
+        - name: traefik-dashboard-auth 
+          namespace: traefik
+  tls:
+    secretName: frontend.minikube.local-com-cert-secret
