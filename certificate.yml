@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: frontend.minikube.local-com-cert
+  namespace: traefik
+spec:
+  secretName: frontend.minikube.local-com-cert-secret
+  isCA: true
+  commonName: '*.frontend.minikube.local.com'
+  dnsNames:
+    - frontend.minikube.local.com
+    - '*.frontend.minikube.local.com'
+  issuerRef:
+    name: frontend.minikube.local-ca-issuer
+    kind: ClusterIssuer
